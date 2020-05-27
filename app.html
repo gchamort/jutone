@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://unpkg.com/tone@13.8.25/build/Tone.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    </head>
+    <body>
+        <div class="container">
+            <h1>Jutone</h1>
+
+            <div class="row">
+                <p>
+                    <a href="https://tonejs.github.io/" target="_blank">tonejs</a> - 
+                    <a href="https://pages.mtu.edu/~suits/notefreqs.html" target="_blank">notes</a>
+                </p>
+            </div>
+
+            <div class="">
+                <!-- <button type="button" class="btn btn-default" id="init-btn">init</button> -->
+                <button type="button" class="btn btn-success" id="play-btn">play</button>
+                <button type="button" class="btn btn-danger" id="stop-btn">stop</button>
+            </div>
+
+            <div class="row">
+                <div class="container slidecontainer mt-4">
+                    <input type="range" min="50" max="500" value="130.81" class="slider" id="range">
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn" id="btnC">C (Do)</button>
+                <button type="button" class="btn" id="btnD">D (Re)</button>
+                <button type="button" class="btn" id="btnE">E (Mi)</button>
+                <button type="button" class="btn" id="btnF">F (Fa)</button>
+                <button type="button" class="btn" id="btnG">G (Sol)</button>
+                <button type="button" class="btn" id="btnA">A (La)</button>
+                <button type="button" class="btn" id="btnB">B (Si)</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
