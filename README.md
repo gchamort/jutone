@@ -1,7 +1,7 @@
 # jutone
  essai des trucs avec tonejs
 
-set un oscilateur à une fréquence un peu comme un diapason
+set un oscilateur à une fréquence pour reproduire un diapason
 
 ##v0.2.42
 works ctrl avec le slider
