@@ -32,11 +32,13 @@ watch les changement du slider
 $('#range').change(function() {
     //applique le changement
     osc1.frequency.value = $(this).val();
+    let val = $(this).val();
+//    $('#input-value').text(val);
 
     console.log(osc1.frequency.value);
 });
 
-/* 
+/*
 watch les changement des boutons
  */
 $('.tones').click(function() {
@@ -45,7 +47,17 @@ $('.tones').click(function() {
 
     // mettre à jour la position du slider
     // $(sliderObj).val() = $(this).attr('data-id'); //TODO !
+    //> faire dans un fonction ou un watcher de la valeur pour set en slider
 
     console.log(osc1.frequency.value);
 });
 
+/*
+watch les changement de l'input
+*/
+$('#input-value').change(function() {
+    //applique le changement
+    osc1.frequency.value = $(this).val();
+
+    console.log(osc1.frequency.value);
+});
