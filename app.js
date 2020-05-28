@@ -11,7 +11,6 @@ let osc1 = new Tone.Oscillator(tone1, forme1).toMaster();
 bouton play
 */
 $('#play-btn').click(function() {
-// document.querySelector('#play-btn').addEventListener('click', function() {
     //init context pour avoir le droit de jouer du son
     Tone.context.resume();
 
@@ -22,7 +21,7 @@ $('#play-btn').click(function() {
 /*
 bouton stop
 */
-document.querySelector('#stop-btn').addEventListener('click', function() {
+$('#stop-btn').click(function() {
     //..
     osc1.stop();
 });
@@ -31,12 +30,14 @@ function updateValue(newVal) {
     //applique le changement
     osc1.frequency.value = newVal;
 
-    // mettre à jour la valeur de l'input
-//    $('#input-value').text(val) = newVal;
+    // met à jour la position du slider
+    $('#range').val(newVal);
 
-    // mettre à jour la position du slider
+    // met à jour la valeur de l'input
+    $('#input-value').val(newVal);
+
+    //> TODO : fonction pour watcher de la valeur et highlight le bouton de note
     // $(sliderObj).val() = $(this).attr('data-id'); //TODO !
-    //> faire dans un fonction ou un watcher de la valeur pour set en slider
 
     console.log(osc1.frequency.value);
 }
