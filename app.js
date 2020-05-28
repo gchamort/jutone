@@ -10,7 +10,8 @@ let osc1 = new Tone.Oscillator(tone1, forme1).toMaster();
 /*
 bouton play
 */
-document.querySelector('#play-btn').addEventListener('click', function() {
+$('#play-btn').click(function() {
+// document.querySelector('#play-btn').addEventListener('click', function() {
     //init context pour avoir le droit de jouer du son
     Tone.context.resume();
 
@@ -26,38 +27,37 @@ document.querySelector('#stop-btn').addEventListener('click', function() {
     osc1.stop();
 });
 
-/*
-watch les changement du slider
-*/
-$('#range').change(function() {
+function updateValue(newVal) {
     //applique le changement
-    osc1.frequency.value = $(this).val();
-    let val = $(this).val();
-//    $('#input-value').text(val);
+    osc1.frequency.value = newVal;
 
-    console.log(osc1.frequency.value);
-});
-
-/*
-watch les changement des boutons
- */
-$('.tones').click(function() {
-    //applique le changement
-    osc1.frequency.value = $(this).attr('data-id');
+    // mettre à jour la valeur de l'input
+//    $('#input-value').text(val) = newVal;
 
     // mettre à jour la position du slider
     // $(sliderObj).val() = $(this).attr('data-id'); //TODO !
     //> faire dans un fonction ou un watcher de la valeur pour set en slider
 
     console.log(osc1.frequency.value);
+}
+
+/*
+watch les changement du slider
+*/
+$('#range').change(function() {
+    updateValue($(this).val());
+});
+
+/*
+watch les changement des boutons
+ */
+$('.tones').click(function() {
+    updateValue($(this).attr('data-id'));
 });
 
 /*
 watch les changement de l'input
 */
 $('#input-value').change(function() {
-    //applique le changement
-    osc1.frequency.value = $(this).val();
-
-    console.log(osc1.frequency.value);
+    updateValue($(this).val());
 });
